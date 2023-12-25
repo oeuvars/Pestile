@@ -4,8 +4,10 @@ import React from 'react'
 const Navbar: React.FC = () => {
   return (
     <div className='grid grid-cols-3 justify-between px-[4vw] mx-auto py-4 backdrop-blur-md border-b-2 border-[#F1ECE0] fixed top-0 w-full'>
-      <img src='icons/pestile.svg' className='w-40'/>
-      <div className='flex mx-auto gap-10'>
+      <Link href="/">
+         <img src='icons/pestile.svg' className='w-40 hover:upper-card-shadow cursor-pointer'/>
+      </Link>
+      <div className='flex mx-auto gap-10 text-[#1E1B13]'>
          <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Features</Link>
          <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Pricing</Link>
          <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>FAQs</Link>

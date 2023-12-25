@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 interface AccordionProps {
   title: string;
@@ -24,8 +23,8 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         onClick={handleClick}
       >
         <div className={`font-gambarino text-4xl text-[#1E1B13] mx-[2vw] animation ${isOpen ? 'my-[2vw]' : 'my-[3vw]' } `}>{title}</div>
-        <div className='my-auto transform transition-transform duration-500' style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-          <FiChevronDown className="w-10 h-10 text-[#1E1B13] my-auto" />
+        <div className='my-auto transform transition-transform duration-500' style={{ transform: isOpen ? 'rotate(-90deg)' : 'rotate(0deg)' }}>
+          <img src='icons/arrow.svg' alt='^' className='w-8 h-8 my-auto'/>
         </div>
       </div>
       <AnimatePresence>
@@ -44,7 +43,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   );
 };
 
-const FAQ: React.FC = () => {
+const FAQ: FC = () => {
    return (
      <div className="w-[60%] mx-auto mt-[7vw]">
        <h1 className="text-7xl font-dynalight text-center text-[#1E1B13]">Frequently asked questions</h1>

@@ -105,9 +105,9 @@ const Testimonials: React.FC = () => {
                <p className="font-gambarino text-4xl text-center text-[#1E1B13] w-[40%]">{TESTIMONIALS[activeTestimonialIndex].text}</p>
                <div className="flex justify-center mt-[2vw] gap-[1vw]">
                   <img src={TESTIMONIALS[activeTestimonialIndex].avatarSrc} alt="Avatar" className="w-16 h-16 rounded-full" />
-                  <div>
-                     <p className="font-satoshi-medium text-lg my-auto text-left">{TESTIMONIALS[activeTestimonialIndex].author}</p>
-                     <p className="font-satoshi-regular text-lg my-auto">{TESTIMONIALS[activeTestimonialIndex].position}</p>
+                  <div className="h-full flex flex-col justify-between">
+                     <p className="font-satoshi-medium text-lg my-auto text-left text-[#1E1B13]">{TESTIMONIALS[activeTestimonialIndex].author}</p>
+                     <p className="font-satoshi-regular text-lg my-auto text-[#80796B]">{TESTIMONIALS[activeTestimonialIndex].position}</p>
                   </div>
                </div>
             </motion.div>

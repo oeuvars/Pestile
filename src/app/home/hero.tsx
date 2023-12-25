@@ -6,11 +6,10 @@ const Hero: React.FC = () => {
     <div>
       <p className='text-[#FF878C] font-dynalight text-3xl text-center mt-[10vw]'>Jump into a new time</p>
       <div className='mt-[2.5vw]'>
-        <p className='font-gambarino text-7xl text-black text-center'>Meet the new</p>
-        <br />
-        <p className='font-gambarino text-7xl text-black text-center'>standard in travel</p>
+        <p className='font-gambarino text-7xl text-[#1E1B13] text-center'>Meet the new</p>
+        <p className='font-gambarino text-7xl text-[#1E1B13] text-center'>standard in travel</p>
       </div>
-      <div className='text-lg text-[#80796B] text-center mt-[2.5vw]'>
+      <div className='text-xl text-[#80796B] text-center mt-[2.5vw] font-satoshi-regular leading-tight'>
         From booking your flights and accommodations to finding local experts and
         <br />
         handling the logistics, your journey is covered from start to finish.
