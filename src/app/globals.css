@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FBF6EA;
+  scrollbar-width: none;
+  @apply  font-satoshi-regular;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: Satoshi-Regular;
+  src: url("../../public/fonts/Satoshi-Regular.ttf");
+}
+
+@font-face {
+  font-family: Satoshi-Medium;
+  src: url("../../public/fonts/Satoshi-Medium.ttf");
+}
+
+@font-face {
+  font-family: Dynalight;
+  src: url("../../public/fonts/Dynalight-Regular.ttf");
+}
+
+@font-face {
+  font-family: Gambarino;
+  src: url("../../public/fonts/Gambarino-Regular.ttf");
+}
+
+.animation {
+  @apply transition duration-500 ease-in-out
+}
+
+.underline-animation {
+  position: relative;
+  color: rgb(38 38 38);
+  text-decoration: none;
+}
+
+.underline-animation:hover {
+  color: rgb(38 38 38);
+}
+
+.underline-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(38 38 38);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.underline-animation:hover::before {
+  transform: scaleX(1);
+}
+
+.upper-card-shadow {
+  box-shadow: .4710613322618883px .7065919983928324px 3.5667151534530963px -.5833333333333333px #ffc8d44f,1.2043746035487857px 1.8065619053231785px 9.119112214719697px -1.1666666666666665px #ffc8d44e,2.414506143104518px 3.6217592146567767px 18.281813978160876px -1.75px #ffc8d44b,4.577066606486914px 6.8655999097303715px 34.655981515895306px -2.333333333333333px #ffc8d446,9.09784094101633px 13.646761411524492px 68.88573721858485px -2.916666666666667px #ffc8d43b,20px 30px 151.43315356948756px -3.5px #ffc8d422;
+}
+
+.lower-card-shadow {
+  box-shadow: .4710613322618883px .7065919983928324px 3.5667151534530963px -.5833333333333333px #f9905224,1.2043746035487857px 1.8065619053231785px 9.119112214719697px -1.1666666666666665px #f9905222,2.414506143104518px 3.6217592146567767px 18.281813978160876px -1.75px #f9905221,4.577066606486914px 6.8655999097303715px 34.655981515895306px -2.333333333333333px #f990521f,9.09784094101633px 13.646761411524492px 68.88573721858485px -2.916666666666667px #f990521a,20px 30px 151.43315356948756px -3.5px #f990520f;
 }

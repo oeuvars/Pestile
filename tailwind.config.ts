@@ -8,11 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      fontFamily: {
+        "satoshi-regular": ["Satoshi-Regular", "sans-serif"],
+        "satoshi-medium": ["Satoshi-Medium", "sans-serif"],
+        "dynalight": ["Dynalight", "sans-serif"],
+        "gambarino": ["Gambarino", "sans-serif"]
+      }
+    },
+    screens: {
+      phone: "360px",
+      xs: "480px",
+      s: "624px",
+      sm: "768px",
+      tablet: "914px",
+      md: "1060px",
+      lg: "1200px",
+      xl: "1700px",
     },
   },
   plugins: [],
