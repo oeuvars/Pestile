@@ -2,7 +2,7 @@ import React from 'react'
 
 const Experience: React.FC = () => {
   return (
-    <div>
+    <div id='features' className='pt-[5vw]'>
       <h1 className='font-dynalight phone:text-3xl md:text-7xl text-center text-[#1E1B13]'>Experience a new era</h1>
       <p className='font-satoshi-regular text-[#80796B] phone:text-base md:text-xl my-[1.5vw] text-center leading-tight phone:w-[90%] md:w-[40%] mx-auto'>
          Embrace seamless journeys, authentic encounters, and unforgettable

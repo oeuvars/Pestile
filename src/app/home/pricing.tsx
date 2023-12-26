@@ -28,8 +28,8 @@ const Pricing: React.FC = () => {
        }
     };
   return (
-    <div>
-      <img src='images/pricing/rail-terminal.webp' alt='train' className='phone:w-[90%] md:w-[70%] mx-auto  phone:my-[5vh] md:my-[5vw]'/>
+    <section id='pricing'>
+      <img src='images/pricing/rail-terminal.webp' alt='train' className='phone:w-[90%] md:w-[70%] mx-auto  phone:py-[5vh] md:py-[5vw]'/>
       <h1 className='font-dynalight phone:text-3xl md:text-7xl text-center mt-[7vw] text-[#1E1B13]'>Pricing designed with you in mind</h1>
       <p className='font-satoshi-regular text-center phone:text-base lg:text-lg text-[#80796B] my-[1vw] leading-tight'>With flexible options that cater to every type of traveler.</p>
       <hr className='phone:w-[10%] lg:w-[2.5%] border-[#FF878C] mx-auto mt-[2.5vw]'/>
@@ -151,7 +151,7 @@ const Pricing: React.FC = () => {
             </button>
          </div>
       </div>
-    </div>
+    </section>
   )
 }
 

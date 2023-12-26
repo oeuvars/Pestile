@@ -45,7 +45,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
 
 const FAQ: FC = () => {
    return (
-     <div className="phone:w-[90%] md:w-[60%] mx-auto phone:mt-[7vh] md:mt-[7vw]">
+     <div id='faq' className="phone:w-[90%] md:w-[60%] mx-auto phone:pt-[7vh] md:pt-[7vw]">
        <h1 className="phone:text-4xl md:text-7xl font-dynalight text-center text-[#1E1B13]">Frequently asked questions</h1>
        <p className='font-satoshi-regular phone:leading-5 md:leading-tight text-[#80796B] text-center phone:text-base md:text-xl phone:my-[2vh] md:my-[2vw]'>Browse through the FAQs below for quick answers to your queries, or reach <br /> out to our support team for further assistance.</p>
        <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto phone:mb-[4vh] md:mb-[4vw]' />

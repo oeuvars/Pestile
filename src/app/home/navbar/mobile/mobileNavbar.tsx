@@ -1,19 +1,19 @@
 import Link from "next/link";
 import { useState } from "react";
-
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { AnimatePresence, motion } from "framer-motion";
 
 interface MobileNavLinkProps {
   title: string;
-  href: string;
+  link: string;
 }
 
 const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "Blogs", href: "/" },
-  { title: "features", href: "/" },
-  { title: "Pricing", href: "/" },
-  { title: "About Us", href: "/" },
+  { title: "Home", link: "/" },
+  { title: "Blogs", link: "/blogs" },
+  { title: "features", link: "/#features" },
+  { title: "Pricing", link: "/#pricing" },
+  { title: "About Us", link: "/#about-us" },
 ];
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -101,7 +101,7 @@ const MobileNavbar = () => {
                       <MobileNavLink
                         key={index}
                         title={link.title}
-                        href={link.href}
+                        link={link.link}
                       />
                     </div>
                   );
@@ -132,13 +132,13 @@ const mobileLinkVars = {
     },
   },
 };
-const MobileNavLink: React.FC<MobileNavLinkProps> = ({ title, href }) => {
+const MobileNavLink: React.FC<MobileNavLinkProps> = ({ title, link }) => {
   return (
     <motion.div
       variants={mobileLinkVars}
       className="text-lg font-satoshi-medium text-black tracking-tight"
     >
-      <Link href={href}>{title}</Link>
+      <AnchorLink href={link}>{title}</AnchorLink>
     </motion.div>
   );
 };

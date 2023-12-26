@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const DesktopNavbar: React.FC = () => {
   return (
@@ -8,9 +9,9 @@ const DesktopNavbar: React.FC = () => {
          <img src='icons/pestile.svg' className='w-40 hover:upper-card-shadow cursor-pointer'/>
       </Link>
       <div className='flex mx-auto gap-10 text-[#1E1B13]'>
-         <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Features</Link>
-         <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Pricing</Link>
-         <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>FAQs</Link>
+         <AnchorLink href="#features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Features</AnchorLink>
+         <AnchorLink href="#pricing" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Pricing</AnchorLink>
+         <AnchorLink href="#faq" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>FAQs</AnchorLink>
          <Link href="/features" className='my-auto font-satoshi-medium text-lg text-neutral-800 underline-animation'>Blog</Link>
       </div>
       <div className='flex ml-auto gap-4'>
