@@ -9,7 +9,7 @@ const UpperFooter: React.FC = () => {
          <p className='font-satoshi-medium font text-white my-auto text-lg'>Start for free</p>
          <img src='icons/plane.svg' className='w-7 h-7'/>
       </button>
-      <img src='images/footer/inside-train.webp' alt='train' className='phone:w-[90%] md:w-[60%] mx-auto my-[4vw]'/>
+      <img src='images/footer/inside-train.webp' alt='train' className='phone:w-[90%] md:w-[70%] mx-auto phone:my-[4vh] md:my-[4vw]'/>
     </div>
   )
 }
