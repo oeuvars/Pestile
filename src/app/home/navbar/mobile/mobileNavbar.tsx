@@ -63,7 +63,7 @@ const MobileNavbar = () => {
           <img src='icons/pestile.svg' className='w-28 hover:upper-card-shadow cursor-pointer'/>
         </Link>
         <div
-          className="cursor-pointer lg:hidden text-black"
+          className="cursor-pointer lg:hidden text-[#1E1B13]"
           onClick={toggleMenu}
         >
           <img src="icons/hamburger.svg" alt="menu" className="w-7 h-7 my-auto"/>
@@ -76,16 +76,16 @@ const MobileNavbar = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-full h-screen origin-top bg-[#FBF6EA] text-black p-10"
+            className="fixed left-0 top-0 w-full h-screen origin-top bg-[#FBF6EA] text-[#1E1B13] p-10"
           >
             <div className="flex h-full flex-col">
               <div className="flex justify-between">
-                <h1 className="text-4xl text-black font-dynalight">Pestile</h1>
+                <h1 className="text-3xl text-[#1E1B13] font-dynalight">Pestile</h1>
                 <p
-                  className="cursor-pointer text-md text-black"
+                  className="cursor-pointer text-[#1E1B13] my-auto"
                   onClick={toggleMenu}
                 >
-                  <img src="icons/x.svg" alt="x" className="w-7 h-7 my-auto" />
+                  <img src="icons/x.svg" alt="x" className="w-6 h-6 my-auto" />
                 </p>
               </div>
               <motion.div
@@ -97,18 +97,33 @@ const MobileNavbar = () => {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div className="overflow-hidden" key={index}>
-                      <MobileNavLink
-                        key={index}
-                        title={link.title}
-                        link={link.link}
-                      />
+                    <div>
+                      <div className="overflow-hidden" key={index}>
+                        <MobileNavLink
+                          key={index}
+                          title={link.title}
+                          link={link.link}
+                        />
+                      </div>
+                      <hr className="rounded-full border-[#1E1B13]/20"/>
                     </div>
+
                   );
                 })}
               </motion.div>
+              <div className='flex mx-auto gap-4'>
+                <button className='py-2 px-7 bg-[#FFFAF1] rounded-[9px] shadow-sm border border-gray-100 hover:shadow-[#FF878C]/40 hover:shadow-xl animation font-satoshi-medium text-neutral-800 phone:text-sm md:text-lg'>
+                    Login
+                </button>
+                <button className='flex bg-[#F99052] mx-auto px-7 py-2 gap-2 rounded-[9px] shadow-sm hover:shadow-[#FF878C]/40 hover:shadow-xl animation font-satoshi-medium'>
+                    <p className='font-satoshi-medium font text-white my-auto phone:text-sm md:text-lg'>Get Started</p>
+
+                    <img src='icons/plane.svg' className='w-6 h-6 my-auto'/>
+                </button>
+              </div>
             </div>
           </motion.div>
+
         )}
       </AnimatePresence>
     </>
