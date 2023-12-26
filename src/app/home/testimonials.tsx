@@ -38,7 +38,7 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const sliderVariants: Variants = {
-  incoming: (direction) => ({
+  incoming: (direction, position) => ({
     x: direction > 0 ? "100%" : "-100%",
     scale: 0.2,
     opacity: 0,
@@ -78,15 +78,15 @@ const Testimonials: React.FC = () => {
   useEffect(() => {
    const interval = setInterval(() => {
      swipeToTestimonial(1);
-   }, 7500);
+   }, 5000);
 
    return () => clearInterval(interval);
  }, [testimonialIndex]);
 
   return (
-   <div className="mt-[7vw]">
+   <div className="phone:mt-[5vh] md:mt-[7vw] overflow-hidden">
       <h2 className="font-dynalight text-3xl text-[#FF878C] text-center mb-[2vw]">What the travellers say</h2>
-      <div className="">
+      <div className="grid overflow-hidden">
          <AnimatePresence initial={false} custom={direction}>
             <motion.div
                key={testimonialIndex}
@@ -100,20 +100,20 @@ const Testimonials: React.FC = () => {
                dragConstraints={{ left: 0, right: 0 }}
                dragElastic={1}
                onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-               className="text-center w-full flex flex-col items-center overflow-hidden absolute"
+               className="text-center w-full flex flex-col items-center absolute"
             >
-               <p className="font-gambarino text-4xl text-center text-[#1E1B13] w-[40%]">{TESTIMONIALS[activeTestimonialIndex].text}</p>
+               <p className="font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13] phone:w-[90%] md:w-[40%]">{TESTIMONIALS[activeTestimonialIndex].text}</p>
                <div className="flex justify-center mt-[2vw] gap-[1vw]">
-                  <img src={TESTIMONIALS[activeTestimonialIndex].avatarSrc} alt="Avatar" className="w-16 h-16 rounded-full" />
+                  <img src={TESTIMONIALS[activeTestimonialIndex].avatarSrc} alt="Avatar" className="phone:w-12 phone:h-12 md:w-16 md:h-16 rounded-full" />
                   <div className="h-full flex flex-col justify-between">
-                     <p className="font-satoshi-medium text-lg my-auto text-left text-[#1E1B13]">{TESTIMONIALS[activeTestimonialIndex].author}</p>
-                     <p className="font-satoshi-regular text-lg my-auto text-[#80796B]">{TESTIMONIALS[activeTestimonialIndex].position}</p>
+                     <p className="font-satoshi-medium phone:text-base md:text-lg my-auto text-left text-[#1E1B13]">{TESTIMONIALS[activeTestimonialIndex].author}</p>
+                     <p className="font-satoshi-regular phone:text-base md:text-lg my-auto text-[#80796B]">{TESTIMONIALS[activeTestimonialIndex].position}</p>
                   </div>
                </div>
             </motion.div>
          </AnimatePresence>
       </div>
-      <img src="images/testimonials/scooter.webp" alt="" className="w-[70%] mx-auto mt-[24vw]"/>
+      <img src="images/testimonials/scooter.webp" alt="" className="phone:w-[90%] md:w-[70%] mx-auto phone:mt-[35vh] md:mt-[24vw]"/>
    </div>
   );
 };

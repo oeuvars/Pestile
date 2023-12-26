@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Navbar: React.FC = () => {
+const DesktopNavbar: React.FC = () => {
   return (
     <div className='grid grid-cols-3 justify-between px-[4vw] mx-auto py-4 backdrop-blur-md border-b-2 border-[#F1ECE0] fixed top-0 w-full'>
       <Link href="/">
@@ -26,4 +26,4 @@ const Navbar: React.FC = () => {
   )
 }
 
-export default Navbar
+export default DesktopNavbar
