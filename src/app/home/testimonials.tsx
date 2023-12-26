@@ -38,21 +38,21 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const sliderVariants: Variants = {
-  incoming: (direction, position) => ({
-    x: direction > 0 ? "100%" : "-100%",
+  incoming: (direction) => ({
+    x: direction > 0 ? "25%" : "-100%",
     scale: 0.2,
     opacity: 0,
   }),
   active: { x: 0, scale: 1, opacity: 1 },
   exit: (direction) => ({
-    x: direction > 0 ? "-100%" : "100%",
+    x: direction > 0 ? "-25%" : "100%",
     scale: 0.2,
     opacity: 0,
   }),
 };
 
 const sliderTransition = {
-   duration: 2,
+   duration: 0.5,
    ease: [0.6, 0.05, 0.28, 0.91],
  };
 
@@ -87,7 +87,7 @@ const Testimonials: React.FC = () => {
    <div className="phone:mt-[5vh] md:mt-[7vw] overflow-hidden">
       <h2 className="font-dynalight text-3xl text-[#FF878C] text-center mb-[2vw]">What the travellers say</h2>
       <div className="grid overflow-hidden">
-         <AnimatePresence initial={false} custom={direction}>
+         <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
                key={testimonialIndex}
                custom={direction}
@@ -100,7 +100,7 @@ const Testimonials: React.FC = () => {
                dragConstraints={{ left: 0, right: 0 }}
                dragElastic={1}
                onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-               className="text-center flex flex-col items-center absolute"
+               className="text-center flex flex-col items-center"
             >
                <p className="font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13] phone:w-[90%] md:w-[40%]">{TESTIMONIALS[activeTestimonialIndex].text}</p>
                <div className="flex justify-center mt-[2vw] gap-[1vw]">
@@ -113,7 +113,7 @@ const Testimonials: React.FC = () => {
             </motion.div>
          </AnimatePresence>
       </div>
-      <img src="images/testimonials/scooter.webp" alt="" className="phone:w-[90%] md:w-[70%] mx-auto phone:mt-[35vh] md:mt-[24vw]"/>
+      <img src="images/testimonials/scooter.webp" alt="" className="phone:w-[90%] md:w-[70%] mx-auto phone:mt-[3vh] md:mt-[3vw]"/>
    </div>
   );
 };
