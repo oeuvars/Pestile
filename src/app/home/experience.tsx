@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
          Embrace seamless journeys, authentic encounters, and unforgettable
          experiences, all at your fingertips.
       </p>
-      <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto'/>
+      <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto phone:mt-[2.5vh] md:mt-0'/>
       <div className='phone:w-[90%] md:w-[78%] mx-auto grid tablet:grid-cols-3 phone:gap-[2vh] md:gap-[2vw] phone:mt-[5vh] md:mt-[5vw]'>
          <div className='grid border-2 border-[#F1E9DF] bg-[#FFFAF1] upper-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
             <img src='images/experience/card-1.webp' alt='camera' className='h-52 mx-auto'/>

@@ -29,12 +29,12 @@ const Pricing: React.FC = () => {
     };
   return (
     <div>
-      <img src='images/pricing/rail-terminal.webp' alt='train' className='h-[32vw] mx-auto my-[5vw]'/>
+      <img src='images/pricing/rail-terminal.webp' alt='train' className='phone:w-[90%] md:w-[70%] mx-auto  phone:my-[5vh] md:my-[5vw]'/>
       <h1 className='font-dynalight phone:text-3xl md:text-7xl text-center mt-[7vw] text-[#1E1B13]'>Pricing designed with you in mind</h1>
       <p className='font-satoshi-regular text-center phone:text-base lg:text-lg text-[#80796B] my-[1vw] leading-tight'>With flexible options that cater to every type of traveler.</p>
       <hr className='phone:w-[10%] lg:w-[2.5%] border-[#FF878C] mx-auto mt-[2.5vw]'/>
 
-      <div className='flex rounded-full bg-[#F1EBDF] text-[#1E1B13] phone:w-[50%] md:w-[16%] mx-auto phone:my-[2.5vh] md:my-[2.5vw] justify-between phone:py-[0.25vh] md:py-[0.25vw] phone:px-[0.25vh] md:px-[0.25vw] phone:text-base md:text-lg animation'>
+      <div className='flex rounded-full bg-[#F1EBDF] text-[#1E1B13] phone:w-[50%] md:w-[16%] mx-auto phone:my-[3vh] md:my-[2.5vw] justify-between phone:py-[0.25vh] md:py-[0.25vw] phone:px-[0.25vh] md:px-[0.25vw] phone:text-base md:text-lg animation'>
          <button id="monthlyBtn" className='bg-[#FFF9F0] rounded-full py-2 font-satoshi-medium phone:px-[2vh] md:px-[2vw] animation' onClick={() => switchButtons('monthlyBtn', 'yearlyBtn')}>
          Monthly
          </button>
@@ -70,7 +70,7 @@ const Pricing: React.FC = () => {
                   <p className='font-satoshi-regular phone:text-base md:text-lg text-[#80796B] bottom-0 leading-tight'>Access an online copy of your app with all your travel data.</p>
                </div>
             </div>
-            <div className='mt-auto'>
+            <div className='mt-auto phone:w-[85%] md:w-full mx-auto'>
                <p className='font-satoshi-regular phone:text-base md:text-lg text-[#80796B] text-center phone:mt-[5vh] md:mt-[5vw] phone:leading-5 md:leading-tight'>Upgrade at any time to unlock more advanced features.</p>
                <button className='phone:mt-[2.5vh] md:mt-[1vw] py-2 px-7 bg-[#FFFAF1] rounded-[9px] shadow-sm border-2 border-[#F1E9DF] hover:shadow-[#FF878C]/40 hover:shadow-md animation font-satoshi-medium text-[#1E1B13] phone:text-base md:text-lg w-full mx-auto'>
                   Start for free
@@ -107,7 +107,7 @@ const Pricing: React.FC = () => {
                   <p className='font-satoshi-regular phone:text-base md:text-lg text-[#80796B] bottom-0 leading-tight'>Enjoy priority assistance from our dedicated support team.</p>
                </div>
             </div>
-            <button className='phone:mt-[2.5vh] md:mt-auto py-2 px-7 bg-[#FFFAF1] rounded-[9px] shadow-sm border-2 border-[#F1E9DF] hover:shadow-[#FF878C]/40 hover:shadow-md animation font-satoshi-medium text-[#1E1B13] phone:text-base md:text-lg phone:w-full md:w-[90%] mx-auto'>
+            <button className='phone:mt-[2.5vh] md:mt-auto py-2 px-7 bg-[#FFFAF1] rounded-[9px] shadow-sm border-2 border-[#F1E9DF] hover:shadow-[#FF878C]/40 hover:shadow-md animation font-satoshi-medium text-[#1E1B13] phone:text-base md:text-lg mt-auto phone:w-[85%] md:w-full mx-auto'>
                Start monthly plan
             </button>
          </div>
@@ -145,7 +145,7 @@ const Pricing: React.FC = () => {
                   <p className='font-satoshi-regular phone:text-base md:text-lg text-[#80796B] bottom-0 leading-tight'>Unlock exclusive offers, perks, and discounts from our travel partners.</p>
                </div>
             </div>
-            <button className='phone:mt-[2.5vh] md:mt-[2vw] flex bg-[#F99052] mx-auto px-7 py-2 gap-2 rounded-[9px] shadow-sm hover:shadow-[#FF878C]/40 hover:shadow-lg animation font-satoshi-medium w-full justify-center'>
+            <button className='phone:mt-[2.5vh] md:mt-[2vw] flex bg-[#F99052] mx-auto px-7 py-2 gap-2 rounded-[9px] shadow-sm hover:shadow-[#FF878C]/40 hover:shadow-lg animation font-satoshi-medium mt-auto phone:w-[85%] md:w-full justify-center'>
                <p className='font-satoshi-medium font text-white my-auto text-lg'>Start yearly plan</p>
                <img src='icons/plane.svg' className='w-7 h-7'/>
             </button>

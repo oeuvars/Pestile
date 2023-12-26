@@ -9,7 +9,7 @@ const Feature: React.FC = () => {
          <br />
          experiences, all at your fingertips.
       </p>
-      <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto phone:mb-[3.5vh] md:mb-[2.5vw]' />
+      <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto phone:mb-[3.5vh] md:mb-[2.5vw] phone:mt-[2.5vh] md:mt-0' />
       <div className='grid lg:grid-cols-[2fr_4fr] phone:w-[90%] tablet:w-[78%] mx-auto phone:gap-[2vh] md:gap-[2vw]'>
          <div className='grid border-4 border-[#F1E9DF] bg-[#FFFAF1] upper-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
             <img src='images/feature/card-1.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
