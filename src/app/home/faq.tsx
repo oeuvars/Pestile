@@ -22,7 +22,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         className="flex w-full justify-between"
         onClick={handleClick}
       >
-        <div className={`font-gambarino phone:text-2xl md:text-4xl text-[#1E1B13] mx-[2vw] animation ${isOpen ? 'my-[2vw]' : 'my-[3vw]' } `}>{title}</div>
+        <div className={`font-gambarino phone:text-xl md:text-4xl text-[#1E1B13] mx-[2vw] animation ${isOpen ? 'my-[2vw]' : 'my-[3vw]' } `}>{title}</div>
         <div className='my-auto transform transition-transform duration-500' style={{ transform: isOpen ? 'rotate(-90deg)' : 'rotate(0deg)' }}>
           <img src='icons/arrow.svg' alt='^' className='w-8 h-8'/>
         </div>

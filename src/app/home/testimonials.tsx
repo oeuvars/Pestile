@@ -100,7 +100,7 @@ const Testimonials: React.FC = () => {
                dragConstraints={{ left: 0, right: 0 }}
                dragElastic={1}
                onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-               className="text-center w-full flex flex-col items-center absolute"
+               className="text-center flex flex-col items-center absolute"
             >
                <p className="font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13] phone:w-[90%] md:w-[40%]">{TESTIMONIALS[activeTestimonialIndex].text}</p>
                <div className="flex justify-center mt-[2vw] gap-[1vw]">
