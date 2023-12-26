@@ -86,7 +86,7 @@ const Testimonials: React.FC = () => {
   return (
    <div className="phone:mt-[5vh] md:mt-[7vw] overflow-hidden">
       <h2 className="font-dynalight text-3xl text-[#FF878C] text-center mb-[2vw]">What the travellers say</h2>
-      <div className="grid overflow-hidden">
+      <div className="grid overflow-hidden phone:my-[5vh] md:my-0">
          <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
                key={testimonialIndex}
