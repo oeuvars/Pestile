@@ -97,8 +97,8 @@ const MobileNavbar = () => {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div>
-                      <div className="overflow-hidden" key={index}>
+                    <div key={index}>
+                      <div className="overflow-hidden">
                         <MobileNavLink
                           key={index}
                           title={link.title}
