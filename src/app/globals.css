@@ -88,3 +88,31 @@ body::-webkit-scrollbar {
 .lower-card-shadow {
   box-shadow: .4710613322618883px .7065919983928324px 3.5667151534530963px -.5833333333333333px #f9905224,1.2043746035487857px 1.8065619053231785px 9.119112214719697px -1.1666666666666665px #f9905222,2.414506143104518px 3.6217592146567767px 18.281813978160876px -1.75px #f9905221,4.577066606486914px 6.8655999097303715px 34.655981515895306px -2.333333333333333px #f990521f,9.09784094101633px 13.646761411524492px 68.88573721858485px -2.916666666666667px #f990521a,20px 30px 151.43315356948756px -3.5px #f990520f;
 }
+
+.hr-text {
+  border: 0;
+  font-size: 14px;
+  height: 1em;
+  line-height: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.hr-text::before {
+  content: "";
+  background: linear-gradient(to right, transparent, white, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+
+.hr-text::after {
+  background-color: #FBF6EA;
+  color: #80796B;
+  content: attr(data-content);
+  line-height: 1em;
+  padding: 0 7px;
+  position: relative;
+}

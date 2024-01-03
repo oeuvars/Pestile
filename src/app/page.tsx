@@ -8,7 +8,8 @@ import UpperFooter from "./home/upperfooter";
 import DownFooter from "./home/downfooter";
 import Navbar from "./home/navbar/navbar";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <main className="">
       <Navbar />

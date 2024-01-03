@@ -60,13 +60,13 @@ const MobileNavbar = () => {
     <>
       <div className="flex justify-between items-center px-[4vw] mx-auto py-4 backdrop-blur-md border-b-2 border-[#F1ECE0] fixed top-0 w-full">
         <Link href="/">
-          <img src='icons/pestile.svg' className='w-28 hover:upper-card-shadow cursor-pointer'/>
+          <img src='/icons/pestile.svg' className='w-28 hover:upper-card-shadow cursor-pointer'/>
         </Link>
         <div
           className="cursor-pointer lg:hidden text-[#1E1B13]"
           onClick={toggleMenu}
         >
-          <img src="icons/hamburger.svg" alt="menu" className="w-7 h-7 my-auto"/>
+          <img src="/icons/hamburger.svg" alt="menu" className="w-7 h-7 my-auto"/>
         </div>
       </div>
       <AnimatePresence>
@@ -85,7 +85,7 @@ const MobileNavbar = () => {
                   className="cursor-pointer text-[#1E1B13] my-auto"
                   onClick={toggleMenu}
                 >
-                  <img src="icons/x.svg" alt="x" className="w-6 h-6 my-auto" />
+                  <img src="/icons/x.svg" alt="x" className="w-6 h-6 my-auto" />
                 </p>
               </div>
               <motion.div
@@ -107,7 +107,6 @@ const MobileNavbar = () => {
                       </div>
                       <hr className="rounded-full border-[#1E1B13]/20"/>
                     </div>
-
                   );
                 })}
               </motion.div>
@@ -117,8 +116,7 @@ const MobileNavbar = () => {
                 </button>
                 <button className='flex bg-[#F99052] mx-auto px-7 py-2 gap-2 rounded-[9px] shadow-sm hover:shadow-[#FF878C]/40 hover:shadow-xl animation font-satoshi-medium'>
                     <p className='font-satoshi-medium font text-white my-auto phone:text-sm md:text-lg'>Get Started</p>
-
-                    <img src='icons/plane.svg' className='w-6 h-6 my-auto'/>
+                    <img src='/icons/plane.svg' className='w-6 h-6 my-auto'/>
                 </button>
               </div>
             </div>
