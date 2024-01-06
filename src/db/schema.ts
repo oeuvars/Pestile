@@ -9,12 +9,10 @@ export const users = pgTable('users', {
    email: text('email').notNull(),
    password: text('password'),
    is_verified: boolean('is_verified'),
-   salt: text('salt'),
-   sessiontoken: text('sessiontoken'),
    otp: integer('otp'),
    last_login: text('last_login'),
    created_at: text('created_at'),
-   update_at: text('update_at'),
+   updated_at: text('updated_at'),
 })
 neonConfig.fetchConnectionCache = true;
 

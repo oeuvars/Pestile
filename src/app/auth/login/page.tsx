@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { trpc } from '@/app/_trpc/client';
 import { motion } from "framer-motion";
+import { Toaster, toast } from "react-hot-toast";
 
 const page = () => {
    const videoVariants = {
@@ -40,13 +41,61 @@ const page = () => {
           const result = await users.mutateAsync({ email: user.email, password: user.password });
           if (result.success === true) {
              Cookies.set('newCookie', result.token! , { expires: 7 })
+             toast.success(result.message, {
+               style: {
+                 border: "2px solid rgba(255, 255, 255, 0.1)",
+                 padding: "10px",
+                 color: "#fff",
+                 backgroundColor: "rgba(0, 0, 0, 0.1)",
+                 backdropFilter: "blur(10px)",
+                 fontSize: '1.1em',
+                 minWidth: "10em",
+               },
+               iconTheme: {
+                 primary: "#000",
+                 secondary: "#fff",
+               },
+             });
+             router.push('/welcome')
           }
-          console.log(Cookies.get("newCookie"))
+          if (result.success === false) {
+            toast.error(result.message, {
+               style: {
+                 border: "2px solid rgba(255, 255, 255, 0.1)",
+                 padding: "10px",
+                 color: "#fff",
+                 backgroundColor: "rgba(0, 0, 0, 0.1)",
+                 backdropFilter: "blur(10px)",
+                 fontSize: '1.1em',
+                 minWidth: "10em",
+               },
+               iconTheme: {
+                 primary: "#000",
+                 secondary: "#fff",
+               },
+             });
+          }
+          else {
+            toast.error(result.message, {
+               style: {
+                 border: "2px solid rgba(255, 255, 255, 0.1)",
+                 padding: "10px",
+                 color: "#fff",
+                 backgroundColor: "rgba(0, 0, 0, 0.1)",
+                 backdropFilter: "blur(10px)",
+                 fontSize: '1.1em',
+                 minWidth: "10em",
+               },
+               iconTheme: {
+                 primary: "#000",
+                 secondary: "#fff",
+               },
+             });
+          }
         } catch (error) {
           console.error('Error during user creation:', error);
         } finally {
           setLoading(false);
-          router.push('/welcome')
         }
       }
     };
@@ -100,6 +149,10 @@ const page = () => {
                      </button>
                   </motion.div>
                </div>
+               <Toaster
+                  position="top-center"
+                  reverseOrder={false}
+               />
                <motion.button
                   variants={variants} initial="hidden" animate="enter" transition={{ ease: "easeOut", duration: 1.6 }}
                   onClick={handleAddUser}

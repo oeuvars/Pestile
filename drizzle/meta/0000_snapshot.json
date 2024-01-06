@@ -1,5 +1,5 @@
 {
-  "id": "be4f9b5d-7866-492e-a6cb-b6d8e0f41699",
+  "id": "da435b29-1a78-4d9b-b821-a7d4facb6d4f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -38,18 +38,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "salt": {
-          "name": "salt",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "sessiontoken": {
-          "name": "sessiontoken",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
         "otp": {
           "name": "otp",
           "type": "integer",
@@ -68,8 +56,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "update_at": {
-          "name": "update_at",
+        "updated_at": {
+          "name": "updated_at",
           "type": "text",
           "primaryKey": false,
           "notNull": false
