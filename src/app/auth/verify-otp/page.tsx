@@ -5,17 +5,16 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 import { trpc } from "@/app/_trpc/client";
-import axios from "axios";
 import Cookies from "js-cookie";
-import { parseJwt } from "@/helpers/decode";
-import jwt_decode from "jwt-decode";
+import { parseJwt } from "@/server/helpers/decode";
 
 const VerificationPage: React.FC = () => {
   const [otp, setOtp] = useState<string[]>(["", "", "", ""]);
   const oneTimePass = Number(otp.join(""));
-  const verify = trpc.verify.useMutation();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState<string>("");
+
+  const verify = trpc.verify.useMutation();
   const router = useRouter();
 
   const handleOtpChange = ( e: React.ChangeEvent<HTMLInputElement>, index: number ) => {
@@ -27,16 +26,15 @@ const VerificationPage: React.FC = () => {
     setOtp(newOtp);
   };
   useEffect(() => {
-   const cookie = Cookies.get("signUpCookie");
-   // const currentMail = parseJwt(cookie!).email;
-   // setEmail(currentMail)
+    const cookie = Cookies.get("newCookie");
+    const currentMail = parseJwt(cookie!).email;
+    setEmail(currentMail)
   })
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("/api/trpc/verify", { email, oneTimePass });
-      const result = response.data.result.data;
+      const result = await verify.mutateAsync({ email: email, oneTimePass: oneTimePass });
       console.log(result)
        if (result) {
          router.push('/welcome')

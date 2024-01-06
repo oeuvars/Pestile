@@ -20,19 +20,19 @@ const Hero: React.FC = () => {
       </button>
       <hr className='phone:mt-[2.5vh] md:mt-[2.5vw] phone:w-[10%] md:w-[2%] mx-auto border-neutral-300'/>
       <Marquee play={true} gradient gradientColor={[251, 246, 234]} className='phone:my-[5vh] md:my-[2.5vw] -z-10'>
-        <img src='logos/grab.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/petronas.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/air-berlin.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/air-canada.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/picco.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/italeri.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/breguet.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/air-jamaica.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/shell.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/motul.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
-        <img src='logos/verizon.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/grab.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/petronas.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/air-berlin.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/air-canada.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/picco.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/italeri.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/breguet.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/air-jamaica.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/shell.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/motul.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
+        <img src='/logos/verizon.svg' alt='grab' className='phone:w-10 md:w-20 phone:h-10 md:h-20 phone:mx-3 md:mx-10'/>
       </Marquee>
-      <img src='images/hero/airport-terminal.webp' alt='terminal' className='phone:w-[90%] md:w-[70%] mx-auto mt-[5vw]'/>
+      <img src='/images/hero/airport-terminal.webp' alt='terminal' className='phone:w-[90%] md:w-[70%] mx-auto mt-[5vw]'/>
     </div>
   )
 }

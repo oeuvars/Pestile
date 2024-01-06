@@ -19,21 +19,21 @@ const TESTIMONIALS: Testimonial[] = [
     text: "This app transformed the way I travel. It's like having a personal travel assistant in my pocket. It's made my trips stress-free and memorable!",
     author: "Togepi",
     position: "Nomad Member",
-    avatarSrc: "images/pokemon/togepi.svg",
+    avatarSrc: "/images/pokemon/togepi.svg",
   },
   {
     id: 1,
     text: "I'm a seasoned traveler, but this app took my experiences to a whole new level. The analytics are eye-opening, and the personalized planning is a game-changer.",
     author: "Bulbasaur",
     position: "Adventurer Member",
-    avatarSrc: "images/pokemon/bulbasaur.svg",
+    avatarSrc: "/images/pokemon/bulbasaur.svg",
   },
   {
    id: 2,
    text: "As a frequent business traveler, the Nomad plan was a game-changer. It made my trips more productive, and the exclusive perks saved me money.",
    author: "Chikorita",
    position: "Explorer Member",
-   avatarSrc: "images/pokemon/chikorita.svg",
+   avatarSrc: "/images/pokemon/chikorita.svg",
  },
 ];
 
@@ -113,7 +113,7 @@ const Testimonials: React.FC = () => {
             </motion.div>
          </AnimatePresence>
       </div>
-      <img src="images/testimonials/scooter.webp" alt="" className="phone:w-[90%] md:w-[70%] mx-auto phone:mt-[3vh] md:mt-[3vw]"/>
+      <img src="/images/testimonials/scooter.webp" alt="" className="phone:w-[90%] md:w-[70%] mx-auto phone:mt-[3vh] md:mt-[3vw]"/>
    </div>
   );
 };

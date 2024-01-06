@@ -12,7 +12,7 @@ const Feature: React.FC = () => {
       <hr className='phone:w-[10%] md:w-[2.5%] border-[#FF878C] mx-auto phone:mb-[3.5vh] md:mb-[2.5vw] phone:mt-[2.5vh] md:mt-0' />
       <div className='grid lg:grid-cols-[2fr_4fr] phone:w-[90%] tablet:w-[78%] mx-auto phone:gap-[2vh] md:gap-[2vw]'>
          <div className='grid border-4 border-[#F1E9DF] bg-[#FFFAF1] upper-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
-            <img src='images/feature/card-1.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
+            <img src='/images/feature/card-1.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
             <div className='w-[90%] mx-auto'>
                <h1 className='font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13]'>Privacy centric</h1>
                <p className='font-satoshi-regular text-center phone:text-base md:text-lg text-[#80796B] phone:my-[1vh] md:my-[1vw] phone:leading-5 md:leading-tight'>
@@ -24,7 +24,7 @@ const Feature: React.FC = () => {
             </button>
          </div>
          <div className='grid border-4 border-[#F1E9DF] bg-[#FFFAF1] upper-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
-            <img src='images/feature/card-2.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
+            <img src='/images/feature/card-2.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
             <div className='w-[90%] mx-auto'>
                <h1 className='font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13]'>Analytics at your fingertips</h1>
                <p className='font-satoshi-regular text-center phone:text-base md:text-lg text-[#80796B] phone:my-[1vh] md:my-[1vw] phone:leading-5 md:leading-tight'>
@@ -36,7 +36,7 @@ const Feature: React.FC = () => {
       </div>
       <div className='grid lg:grid-cols-[4fr_2fr] phone:w-[90%] md:w-[78%] mx-auto phone:gap-[2vh] md:gap-[2vw] phone:my-[2vh] md:my-[2vw]'>
          <div className='grid border-4 border-[#F1E9DF] bg-[#FFFAF1] lower-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
-            <img src='images/feature/card-3.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
+            <img src='/images/feature/card-3.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
             <div className='w-[90%] mx-auto'>
                <h1 className='font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13]'>Integrate all your data</h1>
                <p className='font-satoshi-regular text-center phone:text-base md:text-lg text-[#80796B] phone:my-[1vh] md:my-[1vw] phone:leading-5 md:leading-tight'>
@@ -46,7 +46,7 @@ const Feature: React.FC = () => {
             <hr className='w-[5%] border-[#000] mx-auto' />
          </div>
          <div className='grid border-4 border-[#F1E9DF] bg-[#FFFAF1] lower-card-shadow rounded-3xl phone:gap-[3vh] md:gap-0 px-[1vw] phone:pt-[2.5vh] md:pt-[2.5vw] phone:pb-[5vh] md:pb-[3vw]'>
-            <img src='images/feature/card-4.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
+            <img src='/images/feature/card-4.webp' alt='camera' className='py-[1.5vw] px-[2vw] mx-auto'/>
             <div className='w-[90%] mx-auto'>
                <h1 className='font-gambarino phone:text-2xl md:text-4xl text-center text-[#1E1B13]'>Pause anytime</h1>
                <p className='font-satoshi-regular text-center phone:text-base md:text-lg text-[#80796B] phone:my-[1vh] md:my-[1vw] phone:leading-5 md:leading-tight'>
