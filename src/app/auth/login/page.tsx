@@ -41,22 +41,7 @@ const page = () => {
           const result = await users.mutateAsync({ email: user.email, password: user.password });
           if (result.success === true) {
              Cookies.set('newCookie', result.token! , { expires: 7 })
-             toast.success(result.message, {
-               style: {
-                 border: "2px solid rgba(255, 255, 255, 0.1)",
-                 padding: "10px",
-                 color: "#fff",
-                 backgroundColor: "rgba(0, 0, 0, 0.1)",
-                 backdropFilter: "blur(10px)",
-                 fontSize: '1.1em',
-                 minWidth: "10em",
-               },
-               iconTheme: {
-                 primary: "#000",
-                 secondary: "#fff",
-               },
-             });
-             router.push('/welcome')
+             router.push('/services')
           }
           if (result.success === false) {
             toast.error(result.message, {
