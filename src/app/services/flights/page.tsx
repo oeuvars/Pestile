@@ -11,7 +11,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import data from "./airports.json"
 import { Skeleton } from "@/components/ui/skeleton"
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const variants = {
     hidden: { opacity: 0, x: -150, y: 0 },
     enter: { opacity: 1, x: 0, y: 0},
@@ -224,4 +224,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

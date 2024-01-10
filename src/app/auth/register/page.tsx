@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 import { trpc } from '@/app/_trpc/client';
 import { motion } from "framer-motion";
 
-const page = () => {
+const Page = () => {
    const router = useRouter();
    const users = trpc.register.useMutation();
    const [user, setUser] = useState({
@@ -131,4 +131,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

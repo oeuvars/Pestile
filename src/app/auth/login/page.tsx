@@ -9,7 +9,7 @@ import { trpc } from '@/app/_trpc/client';
 import { motion } from "framer-motion";
 import { Toaster, toast } from "react-hot-toast";
 
-const page = () => {
+const Page = () => {
    const videoVariants = {
       hidden: { opacity: 0, x: -100, y: 0 },
       enter: { opacity: 1, x: 0, y: 0 },
@@ -162,4 +162,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
