@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Provider from './_trpc/provider';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Pestile | Flight Booking with Convinience',
@@ -18,6 +19,7 @@ export default async function RootLayout({
             <Provider>
               {children}
             </Provider>
+            <Toaster />
         </body>
       </html>
   )
