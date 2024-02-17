@@ -58,17 +58,17 @@ export const register = publicProcedure.input(signupSchema).mutation(async (opts
     if (existingUser && existingUser.length > 0) {
       const isUserVerified = existingUser[0].is_verified;
       if (isUserVerified === false) {
-        await db.update(users).set({ otp: randomOTP, created_at: new Date().toLocaleDateString() }).where(eq(users.email, opts.input.email));
+        await db.update(users).set({ otp: randomOTP, updated_at: new Date() }).where(eq(users.email, opts.input.email));
         const mailSubject = "Mail Verification";
         await sendMail(opts.input.email, mailSubject, content);
-        const emailOldToken = jwt.sign(
+        const token = jwt.sign(
           { email: opts.input.email },
           JWT_SECRET,
-          { expiresIn: "24h" }
+          { expiresIn: "7d" }
         );
-        return { message: "User updated successfully", token: emailOldToken };
+        return { message: "User updated successfully", token: token };
       } else {
-        return { message: "User already exists", token: "" };
+        return { message: "User already exists", token: null };
       }
     } else {
       const hashedPassword: string = await new Promise((resolve, reject) => {
@@ -79,11 +79,10 @@ export const register = publicProcedure.input(signupSchema).mutation(async (opts
       });
       await db.insert(users).values({username: opts.input.username,email: opts.input.email,password: hashedPassword,is_verified: false});
       await sendMail(opts.input.email, mailSubject, content);
-      await db.update(users).set({ otp: randomOTP, created_at: new Date().toLocaleDateString() }).where(eq(users.email, opts.input.email));
-      const emailNewToken = jwt.sign({ email: opts.input.email }, JWT_SECRET, {
-        expiresIn: "24h",
+      await db.update(users).set({ otp: randomOTP, created_at: new Date() }).where(eq(users.email, opts.input.email));
+      const token = jwt.sign({ email: opts.input.email }, JWT_SECRET, {
+        expiresIn: "7d",
       });
-      console.log(emailNewToken);
-      return { message: "User created succesfully", token: emailNewToken };
+      return { message: "User created succesfully", token: token };
     }
   });

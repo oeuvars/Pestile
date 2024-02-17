@@ -41,8 +41,9 @@ const Page = () => {
         try {
           setLoading(true);
           const result = await users.mutateAsync({ username: user.username, email: user.email, password: user.password });
-          Cookies.set('newCookie', result.token , { expires: 7 })
-          console.log(Cookies.get("Cookie"))
+          if (result.token) {
+            Cookies.set('RegisterCookie', result.token , { expires: 7 })
+          }
         } catch (error) {
           console.error('Error during user creation:', error);
         } finally {

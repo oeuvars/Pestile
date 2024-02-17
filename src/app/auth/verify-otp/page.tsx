@@ -1,43 +1,67 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
-import Link from "next/link";
+import { Toaster, toast } from "react-hot-toast";
 import { trpc } from "@/app/_trpc/client";
 import Cookies from "js-cookie";
-import { parseJwt } from "@/server/helpers/decode";
+import Navbar from "@/app/home/navbar/navbar";
+import { motion } from "framer-motion"
+import { jwtDecode } from "jwt-decode";
+import DownFooter from "@/app/home/downfooter";
+
+interface Payload {
+  email: string;
+  exp: number;
+  iat: number
+}
 
 const VerificationPage: React.FC = () => {
-  const [otp, setOtp] = useState<string[]>(["", "", "", ""]);
-  const oneTimePass = Number(otp.join(""));
+  const [otp, setOtp] = useState<string[]>(new Array(4).fill(""));
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState<string>("");
+  const otpBoxReference = useRef<(HTMLInputElement | null)[]>(new Array(3).fill(null));
 
   const verify = trpc.verify.useMutation();
   const router = useRouter();
 
-  const handleOtpChange = ( e: React.ChangeEvent<HTMLInputElement>, index: number ) => {
-    const newOtp = [...otp];
-    newOtp[index] = e.target.value;
-    if (e.target.value && index < otp.length - 1) {
-      document.getElementById(`otp-input-${index + 1}`)?.focus();
-    }
-    setOtp(newOtp);
-  };
   useEffect(() => {
-    const cookie = Cookies.get("newCookie");
-    const currentMail = parseJwt(cookie!).email;
-    setEmail(currentMail)
-  })
+    const cookie = Cookies.get("RegisterCookie");
+    if (cookie) {
+      const payload: Payload = jwtDecode(cookie);
+      setEmail(payload.email)
+    }
+    else {
+      router.push("/auth/register")
+    }
+  }, [])
+
+  function handleBackspaceAndEnter(e: React.KeyboardEvent<HTMLInputElement>, index: number) {
+    if (e.key === "Backspace" && !e.currentTarget.value && index > 0) {
+      otpBoxReference.current[index - 1]!.focus();
+    }
+    if (e.key === "Enter" && e.currentTarget.value && index < 3) {
+      otpBoxReference.current[index + 1]!.focus();
+    }
+  }
+
+  function handleChange(value: string, index: number) {
+    let newArr = [...otp];
+    newArr[index] = value;
+    setOtp(newArr);
+
+    if (value && index < 3) {
+      otpBoxReference.current[index + 1]!.focus();
+    }
+  }
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setLoading(true);
+    const oneTimePass = otp.join("")
     try {
-      const result = await verify.mutateAsync({ email: email, oneTimePass: oneTimePass });
-      console.log(result)
+      const result = await verify.mutateAsync({ email: email, oneTimePass: Number(oneTimePass) });
        if (result) {
-         router.push('/welcome')
+         router.push('/services')
          toast.success("You are Verified!", {
             style: {
               border: "2px solid rgba(255, 255, 255, 0.1)",
@@ -78,28 +102,29 @@ const VerificationPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between min-h-screen w-[60%] mx-auto mt-[7vw]">
-      <div className="">
-        <div className="flex flex-col phone:gap-2 lg:gap-3">
-          <h1 className="text-5xl font-dynalight text-[#80796B]">Hey,</h1>
-          <h1 className="font-gambarino text-[#1E1B13] text-5xl">
+    <div className="min-h-screen flex flex-col justify-between">
+      <Navbar />
+      <div className="phone:w-[90%] tablet:w-[60%] mx-auto phone:my-[7vh] tablet:my-[7vw]">
+        <div className="flex flex-col mt-10">
+          <h1 className="text-5xl font-dynalight text-[#80796B] text-center">Hey,</h1>
+          <h1 className="gradient-text phone:text-3xl tablet:text-5xl font-medium leading-relaxed text-center tracking-tight font-gambarino text-[#1E1B13]">
             Please verify your email.
           </h1>
         </div>
-
-        <div className="flex justify-center space-x-3 mt-10">
+        <motion.div className="flex justify-center space-x-3 mt-7">
           {otp.map((digit, index) => (
             <input
               key={index}
-              type="text"
-              id={`otp-input-${index}`}
-              className="w-16 h-16 text-center bg-[#FFFAF1] border-2 border-[#F1E9DF] text-[#1E1B13] outline-none font-satoshi-medium lower-card-shadow rounded-lg text-xl"
               value={digit}
               maxLength={1}
-              onChange={(e) => handleOtpChange(e, index)}
+              onChange={(e) => handleChange(e.target.value, index)}
+              onKeyUp={(e) => handleBackspaceAndEnter(e, index)}
+              ref={(reference) => (otpBoxReference.current[index] = reference)}
+              className="w-16 h-16 text-center bg-[#FFFAF1] border-2 border-[#F1E9DF] text-[#1E1B13] outline-none font-satoshi-medium lower-card-shadow rounded-lg text-xl"
             />
           ))}
-        </div>
+        </motion.div>
+        <Toaster position="bottom-center" />
         <button
           onClick={handleClick}
           className={`flex bg-[#F99052] text-white px-6 py-2 rounded-lg border-2 font-satoshi-medium text-lg border-[#F1E9DF] hover:lower-card-shadow mt-10 w-[50%] mx-auto justify-center ${
@@ -107,9 +132,10 @@ const VerificationPage: React.FC = () => {
           }`}
           disabled={loading}
         >
-          <p className="text-center">{loading ? "Verifying..." : "Verify"}</p>
+          <p className="text-center text-[#FAFAFA]">{loading ? "Verifying..." : "Verify"}</p>
         </button>
       </div>
+      <DownFooter />
     </div>
   );
 };

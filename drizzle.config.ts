@@ -5,6 +5,6 @@ export default {
    driver: 'pg',
    out: './drizzle',
    dbCredentials: {
-      connectionString: "postgresql://oeuvars:Vtpv42NwcAgI@ep-sweet-brook-15154860-pooler.ap-southeast-1.aws.neon.tech/pestile?sslmode=require"
+      connectionString: "postgres://postgres.idgtncmohkebvkzsmrlz:xh1HxYukMmOXSJJx@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
    },
-}satisfies Config;
+} satisfies Config;

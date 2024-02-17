@@ -40,7 +40,7 @@ const Page = () => {
           setLoading(true);
           const result = await users.mutateAsync({ email: user.email, password: user.password });
           if (result.success === true) {
-             Cookies.set('newCookie', result.token! , { expires: 7 })
+             Cookies.set('loginCookie', result.token! , { expires: 7 })
              router.push('/services')
           }
           if (result.success === false) {

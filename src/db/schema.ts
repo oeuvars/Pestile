@@ -1,7 +1,7 @@
-import { serial, text, pgTable, pgSchema, boolean, integer } from "drizzle-orm/pg-core";
-import { neon, neonConfig } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-http';
+import { serial, text, pgTable, boolean, integer, timestamp } from "drizzle-orm/pg-core";
 import { eq } from "drizzle-orm";
+import postgres from 'postgres'
+import { drizzle } from 'drizzle-orm/postgres-js'
 
 export const users = pgTable('users', {
    id: serial('id').primaryKey(),
@@ -10,15 +10,14 @@ export const users = pgTable('users', {
    password: text('password'),
    is_verified: boolean('is_verified'),
    otp: integer('otp'),
-   last_login: text('last_login'),
-   created_at: text('created_at'),
-   updated_at: text('updated_at'),
+   last_login: timestamp('last_login'),
+   created_at: timestamp('created_at'),
+   updated_at: timestamp('updated_at'),
 })
-neonConfig.fetchConnectionCache = true;
+const connectionString = process.env.DATABASE_URL!
 
-const sql = neon("postgresql://oeuvars:Vtpv42NwcAgI@ep-sweet-brook-15154860-pooler.ap-southeast-1.aws.neon.tech/pestile?sslmode=require"!);
-
-export const db = drizzle(sql);
+const client = postgres(connectionString)
+export const db = drizzle(client);
 
 export const getUserByEmail = async (email: string) =>
     await db.select().from(users).where(eq(users.email, email));

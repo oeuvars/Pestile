@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"password" text,
 	"is_verified" boolean,
 	"otp" integer,
-	"last_login" text,
-	"created_at" text,
-	"updated_at" text
+	"last_login" timestamp,
+	"created_at" timestamp,
+	"updated_at" timestamp
 );

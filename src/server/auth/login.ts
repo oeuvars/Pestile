@@ -27,9 +27,9 @@ export const login = publicProcedure.input(loginSchema).mutation(async (opts) =>
        })
      });
      if(status === true) {
-       const loginToken = jwt.sign({ name: user.username, email: user.email }, JWT_SECRET, {expiresIn: '24h'});
-       await db.update(users).set({ last_login: new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric"}) }).where(eq(users.email, email));
-       return { success: true, message : "User logged in", token: loginToken }
+       const token = jwt.sign({ name: user.username, email: user.email }, JWT_SECRET, {expiresIn: '24h'});
+       await db.update(users).set({ last_login: new Date() }).where(eq(users.email, email));
+       return { success: true, message : "User logged in", token: token }
      }
      else {
        return { success: false,message : "Pssword Incorrect", token: null }

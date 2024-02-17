@@ -1,5 +1,5 @@
 {
-  "id": "da435b29-1a78-4d9b-b821-a7d4facb6d4f",
+  "id": "53c93617-0caa-4fcc-8581-29e766fdb0a7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -46,19 +46,19 @@
         },
         "last_login": {
           "name": "last_login",
-          "type": "text",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false
         }
