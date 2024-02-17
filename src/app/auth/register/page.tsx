@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 import { trpc } from '@/app/_trpc/client';
 import { motion } from "framer-motion";
+import { Toaster, toast } from "react-hot-toast";
 
 const Page = () => {
    const router = useRouter();
@@ -38,20 +39,48 @@ const Page = () => {
     const handleAddUser = async (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       if (user.email && user.username && user.password && !loading) {
-        try {
           setLoading(true);
           const result = await users.mutateAsync(user);
-          if (result.token) {
-            console.log(result.message)
-            Cookies.set('RegisterCookie', result.token , { expires: 7 })
+          if (result.success === true ) {
+            Cookies.set('RegisterCookie', result.token! , { expires: 7 })
+            router.push('/auth/verify-otp')
+            setLoading(false);
+          } else {
+            setLoading(false)
+            toast.error(result.message, {
+               style: {
+                 border: "2px solid rgba(255, 255, 255, 0.1)",
+                 padding: "10px",
+                 color: "#fff",
+                 backgroundColor: "rgba(0, 0, 0, 0.1)",
+                 backdropFilter: "blur(10px)",
+                 fontSize: '1.1em',
+                 minWidth: "10em",
+               },
+               iconTheme: {
+                 primary: "#000",
+                 secondary: "#fff",
+               },
+            });
           }
-        } catch (error) {
-          console.error('Error during user creation:', error);
-        } finally {
-          setLoading(false);
-          router.push('/auth/verify-otp')
         }
-      }
+         else {
+            toast.error("Enter your proper credentials", {
+               style: {
+                 border: "2px solid rgba(255, 255, 255, 0.1)",
+                 padding: "10px",
+                 color: "#fff",
+                 backgroundColor: "rgba(0, 0, 0, 0.1)",
+                 backdropFilter: "blur(10px)",
+                 fontSize: '1.1em',
+                 minWidth: "10em",
+               },
+               iconTheme: {
+                 primary: "#000",
+                 secondary: "#fff",
+               },
+            });
+         }
     };
   return (
       <>
@@ -114,6 +143,9 @@ const Page = () => {
                      </button>
                   </motion.div>
                </div>
+               <Toaster
+                  position="top-center"
+               />
                <motion.button
                   variants={variants} initial="hidden" animate="enter" transition={{ ease: "easeOut", duration: 1.75 }}
                   onClick={handleAddUser}

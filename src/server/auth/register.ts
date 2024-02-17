@@ -54,6 +54,7 @@ const content = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   </html>`;
 
 export const register = publicProcedure.input(signupSchema).mutation(async (opts) => {
+  console.log(opts)
     const existingUser = await getUserByEmail(opts.input.email);
     if (existingUser && existingUser.length > 0) {
       const isUserVerified = existingUser[0].is_verified;
@@ -66,9 +67,9 @@ export const register = publicProcedure.input(signupSchema).mutation(async (opts
           JWT_SECRET,
           { expiresIn: "7d" }
         );
-        return { message: "User updated successfully", token: token };
+        return { success: true, message: "User updated successfully", token: token };
       } else {
-        return { message: "User already exists", token: null };
+        return { success: false, message: "User already exists", token: null };
       }
     } else {
       const hashedPassword: string = await new Promise((resolve, reject) => {
@@ -83,6 +84,6 @@ export const register = publicProcedure.input(signupSchema).mutation(async (opts
       const token = jwt.sign({ email: opts.input.email }, JWT_SECRET, {
         expiresIn: "7d",
       });
-      return { message: "User created succesfully", token: token };
+      return { success: true, message: "User created succesfully", token: token };
     }
   });
