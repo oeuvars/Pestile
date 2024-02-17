@@ -42,6 +42,7 @@ const Page = () => {
           setLoading(true);
           const result = await users.mutateAsync({ username: user.username, email: user.email, password: user.password });
           if (result.token) {
+            console.log(result.message)
             Cookies.set('RegisterCookie', result.token , { expires: 7 })
           }
         } catch (error) {
