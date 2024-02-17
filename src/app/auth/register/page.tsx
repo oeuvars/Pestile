@@ -40,7 +40,7 @@ const Page = () => {
       if (user.email && user.username && user.password && !loading) {
         try {
           setLoading(true);
-          const result = await users.mutateAsync({ username: user.username, email: user.email, password: user.password });
+          const result = await users.mutateAsync(user);
           if (result.token) {
             console.log(result.message)
             Cookies.set('RegisterCookie', result.token , { expires: 7 })
