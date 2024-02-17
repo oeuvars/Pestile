@@ -19,7 +19,7 @@ export const updatePassword = publicProcedure.input(updatePasswordSchema).mutati
     });
    const user = await db.update(users).set({ password: hashedPassword }).where(eq(users.email, email));
    if (user) {
-      await db.update(users).set({ updated_at: new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric"}) }).where(eq(users.email, email));
+      await db.update(users).set({ updated_at: new Date() }).where(eq(users.email, email));
       return { message: "Password updated succesfully" };
    } else {
       return { message: "Could not update password" };
